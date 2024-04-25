@@ -1,7 +1,13 @@
 import express from 'express';
 import porjectsRoutes from './routes/projects.routes.js';
-const app = express();
+import tasksRoutes from './routes/task.route.js'
 
-app.use(porjectsRoutes)
+const app = express();
+// Middlewares
+app.use(express.json());
+
+
+app.use(porjectsRoutes);
+app.use(tasksRoutes);
 
 export default app;
